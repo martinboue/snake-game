@@ -15,9 +15,9 @@ const gameOverElement = document.getElementById('game-over');
 const pauseElement = document.getElementById('pause');
 
 // High score
-const highScoreStorageKey = "high-score";
+const HIGH_SCORE_KEY = "high-score";
 const highScoreElement = document.getElementById('high-score');
-let highScore = parseInt(localStorage.getItem(highScoreStorageKey)) ?? 0;
+let highScore = parseInt(localStorage.getItem(HIGH_SCORE_KEY) || 0);
 
 // Obstacles
 const obstaclesCount = 5;
@@ -135,7 +135,7 @@ function updateScore() {
 }
 
 function updateHighScore() {
-	localStorage.setItem(highScoreStorageKey, highScore);
+	localStorage.setItem(HIGH_SCORE_KEY, highScore);
 	highScoreElement.innerText = "HIGH SCORE: " + highScore;
 }
 
